@@ -1,8 +1,8 @@
+import Task013 from "./task013_state_prop/Task013";
+
 function App() {
   return (
-    <div>
-      <h1>React Tasks Combined</h1>
-    </div>
+    <Task013 />
   );
 }
 
