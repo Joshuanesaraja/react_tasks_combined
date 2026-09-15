@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Profile({
     name,
     age,
@@ -6,7 +8,11 @@ function Profile({
     setAge,
     setIsActive
 }) {
+    const [ageTouched, setAgeTouched] = useState(false);
+    const [nameTouched, setNameTouched] = useState(false);
+
     return (
+
         <div>
             <h2>Profile</h2>
 
@@ -15,8 +21,22 @@ function Profile({
                 <input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onFocus={() => setNameTouched(true)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+
+                        if (/^[A-Za-z ]*$/.test(value)) {
+                            setName(value);
+                        }
+                    }}
+                    placeholder="Enter your name"
                 />
+
+                {nameTouched && name.trim() === "" && (
+                    <span className="error">
+                        Name is required
+                    </span>
+                )}
             </label>
 
             <label>
@@ -24,33 +44,66 @@ function Profile({
                 <input
                     type="number"
                     value={age}
-                    onChange={(e) => setAge(Number(e.target.value))}
+                    min="1"
+                    max="120"
+                    onFocus={() => setAgeTouched(true)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+
+                        if (value === "") {
+                            setAge("");
+                            return;
+                        }
+
+                        const numberValue = Number(value);
+
+                        if (numberValue >= 1 && numberValue <= 120) {
+                            setAge(numberValue);
+                        }
+                    }}
+                    placeholder="Enter your age"
                 />
+
+                {ageTouched && age === "" && (
+                    <span className="error">
+                        Age is required
+                    </span>
+                )}
+
             </label>
 
             <div className="status-row">
-                <span>Active Status</span>
+                <span>Activity Status</span>
 
-                <label className="checkbox-label">
+                <label className="switch">
                     <input
                         type="checkbox"
                         checked={isActive}
                         onChange={(e) => setIsActive(e.target.checked)}
                     />
-                    {isActive ? "Active" : "Inactive"}
+                    <span className="slider"></span>
                 </label>
             </div>
 
             <div className="profile-preview">
-                <h3>Profile Preview</h3>
-                <p>Name: {name}</p>
-                <p>Age: {age}</p>
-                <p>
-                    Status:{" "}
-                    <span className={isActive ? "active" : "inactive"}>
+                <h4>Profile Preview</h4>
+
+                <div className="detail-item">
+                    <span>Name</span>
+                    <strong>{name}</strong>
+                </div>
+
+                <div className="detail-item">
+                    <span>Age</span>
+                    <strong>{age}</strong>
+                </div>
+
+                <div className="detail-item">
+                    <span>Status</span>
+                    <strong className={isActive ? "active" : "inactive"}>
                         {isActive ? "Active" : "Inactive"}
-                    </span>
-                </p>
+                    </strong>
+                </div>
             </div>
         </div>
     );

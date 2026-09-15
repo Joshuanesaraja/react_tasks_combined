@@ -5,11 +5,11 @@ import UserDetails from "./UserDetails";
 import "./Task013.css";
 
 function Task013() {
-    const [name, setName] = useState("Joshua");
+    const [name, setName] = useState("");
 
-    const [age, setAge] = useState(22);
+    const [age, setAge] = useState("");
 
-    const [isActive, setIsActive] = useState(true);
+    const [isActive, setIsActive] = useState(false);
 
     const [skills, setSkills] = useState([
         "HTML",
@@ -18,10 +18,11 @@ function Task013() {
     ]);
 
     const [userDetails, setUserDetails] = useState({
-        city: "Chennai",
-        role: "Developer"
+        city: "",
+        role: ""
     });
 
+    // This is a callback function
     function addSkill(newSkill) {
         setSkills([...skills, newSkill]);
     }
@@ -54,20 +55,38 @@ function Task013() {
                 </section>
 
                 <section className="task013-card">
-                    <Skills
-                        skills={skills}
-                        addSkill={addSkill}
-                    />
-                </section>
-
-                <section className="task013-card">
                     <UserDetails
+                        // current object
                         userDetails={userDetails}
+                        // a function that can add a new detail
                         updateUserDetails={updateUserDetails}
                     />
                 </section>
 
+                <section className="task013-card">
+                    <Skills
+                        // current array
+                        skills={skills}
+                        // a function that can add a new skill
+                        addSkill={addSkill}
+                    />
+                </section>
+
             </main>
+
+            <footer className="task013-footer">
+                <p>
+                    © 2026 Joshua Nesaraja · Capminds · React Tasks
+                </p>
+
+                <a
+                    href="https://github.com/Joshuanesaraja/react_tasks_combined"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    View Repository
+                </a>
+            </footer>
         </div>
     );
 }
