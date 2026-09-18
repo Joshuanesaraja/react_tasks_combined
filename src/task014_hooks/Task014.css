@@ -1,0 +1,297 @@
+.task014 {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Header */
+
+.task014-header {
+  background: linear-gradient(135deg, #0e43d6, #019ff4d1);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.task014-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.task014-header p {
+  margin: 10px 0 0;
+  color: #d1d5db;
+}
+
+/* Navbar */
+
+.task014-navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: large;
+}
+
+.task014-navbar span:first-child {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.task014-navbar span:last-child {
+  color: #2563eb;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* Dashboard */
+
+.task014-dashboard {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Cards */
+
+.task014-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.task014-card:hover,
+.task014-card:focus-within {
+  box-shadow: 0 0 22px rgba(59, 130, 246, 0.3);
+  transform: translateY(-3px);
+}
+
+.task014-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #00000099;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+/* Patient Details */
+
+.task014-details {
+  padding: 15px;
+  background: #0878e816;
+  border-radius: 8px;
+}
+
+.task014-details div {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.task014-details div:last-child {
+  border-bottom: none;
+}
+
+.task014-details span {
+  color: #6b7280;
+}
+
+.task014-details strong {
+  color: #1f2937;
+}
+
+/* Patient List */
+
+.patient-list {
+  list-style: none;
+  padding: 15px;
+  margin: 0;
+  background: #0878e816;
+  border-radius: 8px;
+}
+
+.patient-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.patient-list li:last-child {
+  border-bottom: none;
+}
+
+.patient-list strong {
+  color: #1f2937;
+}
+
+.patient-list span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Inputs */
+
+.task014-card label {
+  display: block;
+  margin: 15px 0;
+  color: #374151;
+  font-weight: 600;
+}
+
+.task014-card input[type="text"] {
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.task014-card input[type="text"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* Symptom Input */
+
+.symptom-input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.symptom-input input {
+  flex: 1;
+  margin-top: 0 !important;
+}
+
+.symptom-input button {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+/* Buttons */
+
+.task014-card button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.task014-card button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.task014-card button:active {
+  transform: translateY(0);
+}
+
+/* Symptoms List */
+
+.symptoms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+/* Individual Symptom */
+
+.symptom-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.symptom-tag:hover {
+  background: #dbeafe;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.12);
+}
+
+/* Footer */
+
+.task014-footer {
+  margin-top: 30px;
+  padding: 25px 20px;
+  text-align: center;
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.task014-footer p {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.task014-footer a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.task014-footer a:hover {
+  color: #93c5fd;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .task014-dashboard {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .task014-header h1 {
+    font-size: 26px;
+  }
+
+  .task014-navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .symptom-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .symptom-input button {
+    width: 100%;
+  }
+
+  .patient-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
