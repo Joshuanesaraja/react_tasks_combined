@@ -5,7 +5,9 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 
-import { store } from './task016_redux/redux/store';
+// import { store } from './task016_redux/redux/store';
+
+import store from './task017_redux_saga/redux/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root')
